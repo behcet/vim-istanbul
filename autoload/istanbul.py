@@ -37,11 +37,11 @@ def sign_covered_lines():
             branchMap = field['branchMap']
             for i, br in branchMap.items():
                 line = br['line']
-                if field['b'][i][0] < 1 and field['b'][i][1] > 0:
+                if len(field['b'][i]) >= 2 and field['b'][i][0] < 1 and field['b'][i][1] > 0:
                     sign_place = "sign place {} line={} name={} buffer={}"\
                         .format(line, line, 'branch_true', buffernr)
                     vim.command(sign_place)
-                if field['b'][i][1] < 1 and field['b'][i][0] > 0:
+                if len(field['b'][i]) >= 2 and field['b'][i][1] < 1 and field['b'][i][0] > 0:
                     sign_place = "sign place {} line={} name={} buffer={}"\
                         .format(line, line, 'branch_false', buffernr)
                     vim.command(sign_place)
