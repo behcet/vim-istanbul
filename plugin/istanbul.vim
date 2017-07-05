@@ -7,7 +7,7 @@ if exists('g:loaded_istanbul')
     finish
 endif
 
-let loaded_istanbul = 1
+let g:loaded_istanbul = 1
 
 command! -nargs=0 IstanbulShow call istanbul#IstanbulShow()
 command! -nargs=0 IstanbulHide call istanbul#IstanbulHide()
